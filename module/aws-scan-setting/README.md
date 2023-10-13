@@ -45,8 +45,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_risken_aws_arn"></a> [risken\_aws\_arn](#input\_risken\_aws\_arn) | Principal arn of RISKEN AWS account | `string` | `"arn:aws:iam::123456789012:root"` | no |
-| <a name="input_risken_external_id"></a> [risken\_external\_id](#input\_risken\_external\_id) | External ID for AssumeRole from RISKEN | `string` | `"EXTERNAL_ID"` | no |
+| <a name="input_risken_aws_arn"></a> [risken\_aws\_arn](#input\_risken\_aws\_arn) | Principal arn of RISKEN AWS account | `string` | n/a | yes |
+| <a name="input_risken_external_id"></a> [risken\_external\_id](#input\_risken\_external\_id) | External ID for AssumeRole from RISKEN | `string` | n/a | yes |
 | <a name="input_risken_policy_name"></a> [risken\_policy\_name](#input\_risken\_policy\_name) | Policy name of RISKEN | `string` | `"RISKEN"` | no |
 | <a name="input_risken_role_name"></a> [risken\_role\_name](#input\_risken\_role\_name) | Role name of RISKEN | `string` | `"RISKEN"` | no |
 

@@ -51,11 +51,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_google_cloud_project_id"></a> [google\_cloud\_project\_id](#input\_google\_cloud\_project\_id) | Your Google Cloud Project ID | `string` | `"your-project-id"` | no |
-| <a name="input_google_cloud_project_name"></a> [google\_cloud\_project\_name](#input\_google\_cloud\_project\_name) | Your Google Cloud Project Name | `string` | `"your-project-name"` | no |
+| <a name="input_google_cloud_project_id"></a> [google\_cloud\_project\_id](#input\_google\_cloud\_project\_id) | Your Google Cloud Project ID | `string` | n/a | yes |
+| <a name="input_google_cloud_project_name"></a> [google\_cloud\_project\_name](#input\_google\_cloud\_project\_name) | Your Google Cloud Project Name | `string` | n/a | yes |
 | <a name="input_risken_custom_role_name"></a> [risken\_custom\_role\_name](#input\_risken\_custom\_role\_name) | Custom role name of RISKEN | `string` | `"RISKEN"` | no |
-| <a name="input_risken_service_account"></a> [risken\_service\_account](#input\_risken\_service\_account) | ServiceAccount of RISKEN | `string` | `"risken@risken-project.iam.gserviceaccount.com"` | no |
-| <a name="input_risken_verification_code"></a> [risken\_verification\_code](#input\_risken\_verification\_code) | Verification code of RISKEN | `string` | `"xxxxxxxxx"` | no |
+| <a name="input_risken_service_account"></a> [risken\_service\_account](#input\_risken\_service\_account) | ServiceAccount of RISKEN | `string` | n/a | yes |
+| <a name="input_risken_verification_code"></a> [risken\_verification\_code](#input\_risken\_verification\_code) | Verification code of RISKEN | `string` | n/a | yes |
 
 ## Outputs
 
