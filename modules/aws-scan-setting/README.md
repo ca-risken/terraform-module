@@ -8,7 +8,7 @@ You can use this module to create RISKEN's AWS scan configuration resources.
 
 ```hcl
 module "aws_scan_setting" {
-  source = "github.com/risken/terraform-modules//module/aws-scan-setting"
+  source = "github.com/ca-risken/terraform-module/modules/aws-scan-setting"
 
   risken_aws_arn     = "arn:aws:iam::123456789012:root"
   risken_external_id = "your-external-id-here"

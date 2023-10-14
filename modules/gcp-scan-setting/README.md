@@ -15,7 +15,7 @@ You can use this module to create RISKEN's GCP scan configuration resources.
 
 ```hcl
 module "gcp_scan_setting" {
-  source = "github.com/risken/terraform-modules//module/gcp-scan-setting"
+  source = "github.com/ca-risken/terraform-module/modules/gcp-scan-setting"
 
   google_cloud_project_id   = "your-project-id-here"
   google_cloud_project_name = "your-project-name-here"

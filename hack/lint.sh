@@ -6,7 +6,7 @@ if [ "${cmd_path}" = "" ]; then
   exit 1
 fi
 
-dirs=`find module -mindepth 1 -maxdepth 1 -type d`
+dirs=`find modules -mindepth 1 -maxdepth 1 -type d`
 for dir in $dirs; do
   echo "Lint for $dir"
   pushd $dir > /dev/null
