@@ -6,7 +6,7 @@ on:
       - main
     types: [opened, synchronize]
     paths:
-      - "module/**/**.tf"
+      - "modules/**/**.tf"
       - ".tflint.hcl"
       - ".github/workflows/terraform-test.yml"
 
