@@ -9,7 +9,7 @@ resource "google_project" "project" {
 
 resource "google_project_iam_member" "risken" {
   project = var.google_cloud_project_id
-  role    = google_project_iam_custom_role.role.name
+  role    = "roles/${google_project_iam_custom_role.name}"
   member  = "serviceAccount:${var.risken_service_account}}"
 
   depends_on = [
