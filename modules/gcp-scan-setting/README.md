@@ -10,6 +10,29 @@ First, you need to import the existing `google_project` resource to set the proj
 You can use this module to create RISKEN's GCP scan configuration resources.
 
 ```hcl
+// import google_project
+import {
+  id = "your-project-id-here"
+  to = google_project.project
+}
+
+resource "google_project" "project" {
+  project_id = "your-project-id-here"
+  name       = "your-project-name-here"
+
+  labels = {
+    "risken" = "your-verification-code-here",
+  }
+
+  lifecycle {
+    ignore_changes = [
+      timeouts,
+      billing_account,
+      auto_create_network,
+    ]
+  }
+}
+
 module "gcp_scan_setting" {
   source = "github.com/ca-risken/terraform-module/modules/gcp-scan-setting"
 
@@ -39,7 +62,6 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [google_project.project](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project) | resource |
 | [google_project_iam_custom_role.risken](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_custom_role) | resource |
 | [google_project_iam_member.risken](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 
@@ -48,10 +70,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_google_cloud_project_id"></a> [google\_cloud\_project\_id](#input\_google\_cloud\_project\_id) | Your Google Cloud Project ID | `string` | n/a | yes |
-| <a name="input_google_cloud_project_name"></a> [google\_cloud\_project\_name](#input\_google\_cloud\_project\_name) | Your Google Cloud Project Name | `string` | n/a | yes |
 | <a name="input_risken_custom_role_name"></a> [risken\_custom\_role\_name](#input\_risken\_custom\_role\_name) | Custom role name of RISKEN | `string` | `"RISKEN"` | no |
 | <a name="input_risken_service_account"></a> [risken\_service\_account](#input\_risken\_service\_account) | ServiceAccount of RISKEN | `string` | n/a | yes |
-| <a name="input_risken_verification_code"></a> [risken\_verification\_code](#input\_risken\_verification\_code) | Verification code of RISKEN | `string` | n/a | yes |
 
 ## Outputs
 
