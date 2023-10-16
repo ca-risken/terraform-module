@@ -7,10 +7,6 @@ This module creates the Google Cloud Scan Setting for RISKEN scanning.
 First, you need to import the existing `google_project` resource to set the project label.
 (this import feature requires version terraform v1.15 or later.)
 
-```shell
-$ terraform plan -generate-config-out=generated.tf
-```
-
 You can use this module to create RISKEN's GCP scan configuration resources.
 
 ```hcl
