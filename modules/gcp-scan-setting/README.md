@@ -9,6 +9,14 @@ First, you need to import the existing `google_project` resource to set the proj
 
 You can use this module to create RISKEN's GCP scan configuration resources.
 
+- Export your project id to `GOOGLE_PROJECT` environment variable.
+
+```shell
+$ export GOOGLE_PROJECT=your-project-id
+```
+
+- Create `main.tf` file and run `terraform init` command.
+
 ```hcl
 // import google_project
 import {
@@ -33,6 +41,7 @@ resource "google_project" "project" {
   }
 }
 
+// Use this module
 module "gcp_scan_setting" {
   source = "github.com/ca-risken/terraform-module/modules/gcp-scan-setting"
 
@@ -42,16 +51,15 @@ module "gcp_scan_setting" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
-| <a name="provider_google"></a> [google](#provider_google) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | n/a |
 
 ## Modules
 
@@ -59,21 +67,20 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                                            | Type     |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Name | Type |
+|------|------|
+| [google_project_iam_binding.risken](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_binding) | resource |
 | [google_project_iam_custom_role.risken](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_custom_role) | resource |
-| [google_project_iam_member.risken](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member)           | resource |
 
 ## Inputs
 
-| Name                                                                                                   | Description                  | Type     | Default    | Required |
-| ------------------------------------------------------------------------------------------------------ | ---------------------------- | -------- | ---------- | :------: |
-| <a name="input_google_cloud_project_id"></a> [google_cloud_project_id](#input_google_cloud_project_id) | Your Google Cloud Project ID | `string` | n/a        |   yes    |
-| <a name="input_risken_custom_role_name"></a> [risken_custom_role_name](#input_risken_custom_role_name) | Custom role name of RISKEN   | `string` | `"RISKEN"` |    no    |
-| <a name="input_risken_service_account"></a> [risken_service_account](#input_risken_service_account)    | ServiceAccount of RISKEN     | `string` | n/a        |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_google_cloud_project_id"></a> [google\_cloud\_project\_id](#input\_google\_cloud\_project\_id) | Your Google Cloud Project ID | `string` | n/a | yes |
+| <a name="input_risken_custom_role_name"></a> [risken\_custom\_role\_name](#input\_risken\_custom\_role\_name) | Custom role name of RISKEN | `string` | `"RISKEN"` | no |
+| <a name="input_risken_service_account"></a> [risken\_service\_account](#input\_risken\_service\_account) | ServiceAccount of RISKEN | `string` | n/a | yes |
 
 ## Outputs
 
 No outputs.
-
 <!-- END_TF_DOCS -->

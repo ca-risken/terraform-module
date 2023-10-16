@@ -1,7 +1,9 @@
-resource "google_project_iam_member" "risken" {
+resource "google_project_iam_binding" "risken" {
   project = var.google_cloud_project_id
   role    = google_project_iam_custom_role.risken.name
-  member  = "serviceAccount:${var.risken_service_account}}"
+  members = [
+    "serviceAccount:${var.risken_service_account}}",
+  ]
 
   depends_on = [
     google_project_iam_custom_role.risken,
