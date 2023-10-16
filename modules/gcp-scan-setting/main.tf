@@ -1,25 +1,3 @@
-import {
-  id = var.google_cloud_project_id
-  to = google_project.project
-}
-
-resource "google_project" "project" {
-  name       = var.google_cloud_project_id
-  project_id = var.google_cloud_project_name
-
-  labels = {
-    "risken" = var.risken_verification_code,
-  }
-
-  lifecycle {
-    ignore_changes = [
-      timeouts,
-      billing_account,
-      auto_create_network,
-    ]
-  }
-}
-
 resource "google_project_iam_member" "risken" {
   project = var.google_cloud_project_id
   role    = google_project_iam_custom_role.risken.name
