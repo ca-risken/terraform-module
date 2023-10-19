@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.0.0"
+    }
+  }
+}
+
 resource "google_project_iam_member" "risken" {
   project = var.google_cloud_project_id
   role    = google_project_iam_custom_role.risken.name

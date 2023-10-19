@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.0.0"
+    }
+  }
+}
+
 resource "google_organization_iam_member" "ope" {
   org_id = var.org_id
   role   = google_organization_iam_custom_role.ope.name
