@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.0"
+    }
+  }
+}
+
 resource "aws_iam_role" "risken" {
   name               = var.risken_role_name
   assume_role_policy = data.aws_iam_policy_document.risken.json

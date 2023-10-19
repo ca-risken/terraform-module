@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.0.0"
+    }
+  }
+}
+
 resource "google_organization_iam_member" "ir_viewer" {
   org_id = var.org_id
   role   = "roles/viewer"
