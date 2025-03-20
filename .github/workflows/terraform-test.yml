@@ -22,9 +22,9 @@ jobs:
           terraform_version: 1.5.3
       - run: terraform fmt -check=true -diff=true -recursive
       - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v3
+        uses: terraform-linters/setup-tflint@v4
         with:
-          tflint_version: latest
+          tflint_version: v0.55.1
       - name: Terraform Init
         run: terraform init -backend=false
       - name: Terraform Validate
