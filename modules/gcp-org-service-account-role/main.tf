@@ -328,6 +328,7 @@ resource "google_organization_iam_custom_role" "risken" {
     "serviceusage.quotas.get",
     "serviceusage.services.get",
     "serviceusage.services.list",
+    "storage.buckets.get",
     "storage.buckets.getIamPolicy",
     "storage.buckets.list",
     "storage.objects.getIamPolicy",
