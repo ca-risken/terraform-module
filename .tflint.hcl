@@ -4,7 +4,7 @@
 
 config {
   # Enable lint checks against Terraform Modules
-  module     = true
+  call_module_type = "all"
   # Disables forcing a 0 return code on finding errors
   force      = false
 }
