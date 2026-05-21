@@ -23,6 +23,7 @@ resource "google_project_iam_custom_role" "risken" {
   description = "RISKEN custom role."
   stage       = "GA"
   permissions = [
+    "apikeys.keys.list",
     "cloudasset.assets.analyzeIamPolicy",
     "cloudasset.assets.searchAllIamPolicies",
     "cloudasset.assets.searchAllResources",
@@ -61,7 +62,6 @@ resource "google_project_iam_custom_role" "risken" {
     "compute.globalAddresses.list",
     "compute.globalForwardingRules.get",
     "compute.globalForwardingRules.list",
-    "compute.globalForwardingRules.pscGet",
     "compute.globalNetworkEndpointGroups.get",
     "compute.globalNetworkEndpointGroups.list",
     "compute.globalOperations.get",
@@ -113,11 +113,7 @@ resource "google_project_iam_custom_role" "risken" {
     "compute.machineImages.list",
     "compute.machineTypes.get",
     "compute.machineTypes.list",
-    "compute.maintenancePolicies.get",
-    "compute.maintenancePolicies.getIamPolicy",
-    "compute.maintenancePolicies.list",
     "compute.networkEndpointGroups.get",
-    "compute.networkEndpointGroups.getIamPolicy",
     "compute.networkEndpointGroups.list",
     "compute.networks.get",
     "compute.networks.getEffectiveFirewalls",
@@ -169,7 +165,6 @@ resource "google_project_iam_custom_role" "risken" {
     "compute.routes.get",
     "compute.routes.list",
     "compute.securityPolicies.get",
-    "compute.securityPolicies.getIamPolicy",
     "compute.securityPolicies.list",
     "compute.snapshots.get",
     "compute.snapshots.getIamPolicy",
@@ -312,7 +307,6 @@ resource "google_project_iam_custom_role" "risken" {
     "networksecurity.locations.list",
     "networksecurity.operations.list",
     "networksecurity.serverTlsPolicies.list",
-    "networkservices.endpointConfigSelectors.list",
     "networkservices.httpFilters.list",
     "networkservices.httpfilters.list",
     "networkservices.locations.list",
